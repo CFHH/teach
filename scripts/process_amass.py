@@ -98,8 +98,7 @@ def param_dict_for_body_model(pose_vector, trans, betas=None):
     return body_params
 
 
-def process_sequence(filename, use_betas,
-                     gender):
+def process_sequence(filename, use_betas, body_model_type, gender):
     
     f_id = '/'.join(filename.split('/')[-4:])
     # logger.info(f'Processing sequence: {f_id}..')
@@ -222,7 +221,7 @@ def read_data(input_dir, model_type, output_dir, use_betas, gender):
             if os.path.basename(seq) == 'neutral_stagei.npz' or \
                 os.path.basename(seq) == 'shape.npz':
                 continue
-            final_seq_data = process_sequence(seq, use_betas, gender)
+            final_seq_data = process_sequence(seq, use_betas, model_type, gender)
             if final_seq_data:
                 dataset_db_list.append(final_seq_data)
         os.makedirs(out_dir, exist_ok=True)
