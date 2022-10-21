@@ -52,7 +52,7 @@ AMASS_DIRS = [
     'TCDhandMocap/TCD_handMocap', # 3'
     'TotalCapture/TotalCapture', # 20'
     'Transitionsmocap/Transitions_mocap', # 20'
-    'TCDhandMocap/TCD_handMocap',
+    #'TCDhandMocap/TCD_handMocap',
     'DanceDB/DanceDB',
     'BMLhandball/BMLhandball']
 
