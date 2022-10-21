@@ -34,6 +34,8 @@ from tqdm import tqdm
 import os.path as osp
 from teach.transforms.smpl import get_body_model
 
+#python scripts/process_amass.py --input-path ./data/amass --output-path ./data/processed_amass --use-betas --gender male --model-type smplx
+
 AMASS_DIRS = [
     'ACCAD/ACCAD', # 19 mins
     'BMLrub/BioMotionLab_NTroje', # 5:40 hours
@@ -247,6 +249,9 @@ if __name__ == '__main__':
     parser.add_argument('--gender', required=True, choices=['male', 'female', 
                                                           'neutral', 'amass'],
                         type=str, help='hard-code the gender or use amass gender')
+
+    parser.add_argument('--model-type', required=True, type=str,
+                        help='smplx...........')
 
 
     args = parser.parse_args()
